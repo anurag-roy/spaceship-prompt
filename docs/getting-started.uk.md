@@ -14,6 +14,45 @@ hide:
 
 Тепер, коли вимоги задоволені, ви можете встановити Spaceship за допомогою будь-якого з перелічених інструментів.
 
+=== "Ручне встановлення"
+
+    !!! hint
+        If you're using any plugin manager, like Oh-My-Zsh, zplug, antigen or other, this might not be the best way to install Spaceship for you.
+
+    Ось спосіб встановити Spaceship, якщо ви не використовуєте жодного менеджера для плагінів Zsh:
+
+    - Клонувати цей репозиторій `git clone https://github.com/spaceship-prompt/spaceship-prompt.git --depth=1`
+    - Зробіть символічне посилання на `spaceship.zsh` у вашому [`$fpath`](http://www.refining-linux.org/archives/46/ZSH-Gem-12-Autoloading-functions/) як `prompt_spaceship_setup`.
+    - Ініціалізуйте систему командного рядка та оберіть `spaceship`.
+
+    #### Приклад
+
+    Запустіть `echo $fpath`, щоб побачити можливе розташування та залінкуйте туди `spaceship.zsh`, ось так:
+
+    ```zsh
+    $ ln -sf "$PWD/spaceship.zsh" "/usr/local/share/zsh/site-functions/prompt_spaceship_setup"
+    ```
+
+    Щоб встановити для окремого користувача, просто додайте каталог у `$fpath` для цього користувача у `.zshrc`:
+
+    ```zsh
+    fpath=( "${ZDOTDIR:-$HOME}/.zfunctions" $fpath )
+    ```
+
+    Далі встановіть тему отак:
+
+    ```zsh
+    $ ln -sf "$PWD/spaceship.zsh" "${ZDOTDIR:-$HOME}/.zfunctions/prompt_spaceship_setup"
+    ```
+
+    Для ініціалізації командного рядка додайте це до вашого `.zshrc`:
+
+    ```zsh
+    # .zshrc
+    autoload -U promptinit; promptinit
+    prompt spaceship
+    ```
+
 === "oh-my-zsh"
 
     Клонуйте репозиторій:
@@ -22,13 +61,11 @@ hide:
     git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
     ```
 
-
     Створіть файлове посилання на `spaceship.zsh-theme` у вашому каталозі користувацьких тем oh-my-zsh:
 
     ```zsh
     ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
     ```
-
 
     Встановіть `ZSH_THEME="spaceship"` у вашому `.zshrc`.
 
@@ -37,7 +74,6 @@ hide:
     ```
     npm install -g spaceship-prompt
     ```
-
 
     Готово. Ця команда має залінкувати `spaceship.zsh` як `prompt_spaceship_setup` у вашому `$fpath` та встановити  `prompt spaceship` у `.zshrc`. Just reload your terminal.
 
@@ -103,38 +139,18 @@ hide:
     makepkg -si
     ```
 
-### Ручне встановлення
+## Congratulations!
 
-Якщо у вас виникли проблеми з підходом описаним вище, виконайте наступні інструкції:
+You've made it! You've installed Spaceship on your machine!
 
-- Клонувати цей репозиторій `git clone https://github.com/spaceship-prompt/spaceship-prompt.git --depth=1`
-- Зробіть символічне посилання на `spaceship.zsh` у вашому [`$fpath`](http://www.refining-linux.org/archives/46/ZSH-Gem-12-Autoloading-functions/) як `prompt_spaceship_setup`.
-- Ініціалізуйте систему командного рядка та оберіть `spaceship`.
+What's next? Spaceship has reasonable defaults, but you might want to adjust them to your needs. Visit our [Options](./options.md) page to learn how to configure your Spaceship.
 
-#### Приклад
+<!-- prettier-ignore -->
+!!! tip
+    Follow [our Twitter](//twitter.com/SpaceshipPrompt) to keep yourself updated about new features, improvements, and bugfixes.
 
-Запустіть `echo $fpath`, щоб побачити можливе розташування та залінкуйте туди `spaceship.zsh`, ось так:
+## Troubleshooting
 
-```zsh
-$ ln -sf "$PWD/spaceship.zsh" "/usr/local/share/zsh/site-functions/prompt_spaceship_setup"
-```
+Having trouble? Take a look at out [Troubleshooting](./troubleshooting.md) page.
 
-Щоб встановити для окремого користувача, просто додайте каталог у `$fpath` для цього користувача у `.zshrc`:
-
-```zsh
-fpath=( "${ZDOTDIR:-$HOME}/.zfunctions" $fpath )
-```
-
-Далі встановіть тему отак:
-
-```zsh
-$ ln -sf "$PWD/spaceship.zsh" "${ZDOTDIR:-$HOME}/.zfunctions/prompt_spaceship_setup"
-```
-
-Для ініціалізації командного рядка додайте це до вашого `.zshrc`:
-
-```zsh
-# .zshrc
-autoload -U promptinit; promptinit
-prompt spaceship
-```
+Still struggling? Please, [file an issue](https://github.com/spaceship-prompt/spaceship-prompt/issues/new/choose), describe your problem and we will gladly help you.

@@ -5,7 +5,6 @@ on:
       - master
       - +([0-9])?(.{+([0-9]),x}).x
       - next
-      - next-major
       - beta
   pull_request:
 
@@ -18,10 +17,10 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     steps:
       - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.0
+        uses: styfle/cancel-workflow-action@0.9.1
 
       - name: ⬇️ Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           submodules: true
 
@@ -40,19 +39,20 @@ jobs:
   release:
     name: Release
     needs: main
-    if: ${{ github.event_name == 'push'}}
+    if: ${{ github.repository == 'spaceship-prompt/spaceship-prompt' && github.event_name == 'push' }}
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.0
+        uses: styfle/cancel-workflow-action@0.9.1
 
       - name: ⬇️ Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           submodules: true
 
       - name: 🚀 Release
         uses: cycjimmy/semantic-release-action@v2
+        id: semantic
         with:
           extra_plugins: |
             @google/semantic-release-replace-plugin
@@ -60,5 +60,7 @@ jobs:
             @semantic-release/git
             semantic-release-license
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Using PAT here, because published release should trigger a workflow
+          # See: https://docs.github.com/en/actions/reference/events-that-trigger-workflows#triggering-new-workflows-using-a-personal-access-token
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

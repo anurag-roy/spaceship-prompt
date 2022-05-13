@@ -50,6 +50,7 @@ SPACESHIP_PROMPT_ORDER=(
   ember         # Ember.js section
   kubectl       # Kubectl context section
   terraform     # Terraform workspace section
+  ibmcloud      # IBM Cloud section
   exec_time     # Execution time
   line_sep      # Line break
   battery       # Battery level and status
@@ -157,12 +158,12 @@ If current directory is write-protected or if current user has not enough rights
 
 Git section consists of `git_branch` and `git_status` subsections. It is shown only in Git repositories.
 
-| Variable               |                                                  Default                                                   | Meaning                                                                                                         |
-| :--------------------- | :--------------------------------------------------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------- |
-| `SPACESHIP_GIT_SHOW`   |                                                   `true`                                                   | Show Git section                                                                                                |
-| `SPACESHIP_GIT_PREFIX` |                                                   `on·`                                                    | Prefix before Git section                                                                                       |
-| `SPACESHIP_GIT_SUFFIX` |                                     `$SPACESHIP_PROMPT_DEFAULT_SUFFIX`                                     | Suffix after Git section                                                                                        |
-| `SPACESHIP_GIT_SYMBOL` | ![·](https://user-images.githubusercontent.com/3459374/34947621-4f324a92-fa13-11e7-9b99-cdba2cdda6b9.png) | Character to be shown before Git section (requires [powerline patched font](https://github.com/powerline/fonts) |
+| Variable               |                                                  Default                                                   | Meaning                                                                                                          |
+| :--------------------- | :--------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------------------- |
+| `SPACESHIP_GIT_SHOW`   |                                                   `true`                                                   | Show Git section                                                                                                 |
+| `SPACESHIP_GIT_PREFIX` |                                                   `on·`                                                    | Prefix before Git section                                                                                        |
+| `SPACESHIP_GIT_SUFFIX` |                                     `$SPACESHIP_PROMPT_DEFAULT_SUFFIX`                                     | Suffix after Git section                                                                                         |
+| `SPACESHIP_GIT_SYMBOL` | ![·](https://user-images.githubusercontent.com/3459374/34947621-4f324a92-fa13-11e7-9b99-cdba2cdda6b9.png) | Character to be shown before Git section (requires [powerline patched font](https://github.com/powerline/fonts)) |
 
 #### Git branch (`git_branch`)
 
@@ -238,6 +239,7 @@ Mercurial status indicators is shown only when you have dirty repository.
 Package version is shown when repository is a package.
 
 - **npm** — `npm` package contains a `package.json` file. We use `jq`, `python` to parse package version for improving performance and `node` as a fallback. Install [jq](https://stedolan.github.io/jq/) for **improved performance** of this section ([Why?](./troubleshooting.md#why-is-my-prompt-slow))
+- **lerna** — `lerna` monorepo contains a `lerna.json` file. We use `jq`, `python` to parse package version for improving performance and `node` as a fallback. Install [jq](https://stedolan.github.io/jq/) for **improved performance** of this section (same reason as npm).
 - **cargo** — `cargo` package contains a `Cargo.toml` file. Currently, we use `cargo pkgid`, it depends on `Cargo.lock`. So if package version isn't shown, you may need to run some command like `cargo build` which can generate `Cargo.lock` file.
 
 > **Note:** This is the version of the package you are working on, not the version of package manager itself.
@@ -423,7 +425,7 @@ The environment variable `COMPOSE_PATH_SEPARATOR` is supported too. For more inf
 
 ### Amazon Web Services (AWS) (`aws`)
 
-Shows selected Amazon Web Services profile configured using [`AWS_PROFILE`](http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html) variable.
+Shows selected Amazon Web Services profile configured using [`AWS_VAULT`](https://github.com/99designs/aws-vault) variable if not defined will use [`AWS_PROFILE`](http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html).
 
 | Variable               |              Default               | Meaning                                      |
 | :--------------------- | :--------------------------------: | -------------------------------------------- |
@@ -607,6 +609,18 @@ Shows the active Terraform wokspace in directories that contain `.terraform/envi
 | `SPACESHIP_TERRAFORM_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after Terraform workspace section         |
 | `SPACESHIP_TERRAFORM_SYMBOL` |               `🛠️·`                | Character to be shown before Terraform workspace |
 | `SPACESHIP_TERRAFORM_COLOR`  |               `105`                | Color of Terraform workspace section             |
+
+### IBM Cloud (`ibmcloud`)
+
+Shows the selected IBM Cloud account by looking up with `ibmcloud target`.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACESHIP_IBMCLOUD_SHOW` | `false` | Current IBM Cloud section |
+| `SPACESHIP_IBMCLOUD_PREFIX` | `using·` | Prefix before IBM Cloud section |
+| `SPACESHIP_IBMCLOUD_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after IBM Cloud section |
+| `SPACESHIP_IBMCLOUD_SYMBOL` | `👔·` | Character to be shown before IBM Cloud section |
+| `SPACESHIP_IBMCLOUD_COLOR` | `039` | Color of IBM Cloud section |
 
 ### Execution time (`exec_time`)
 

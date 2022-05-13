@@ -20,19 +20,21 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: spaceship
       toggle:
-        icon: material/weather-night
+        icon: material/weather-sunny
         name: Switch to dark mode
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
-        icon: material/weather-sunny
+        icon: material/weather-night
         name: Switch to light mode
   features:
+    - navigation.instant
+    - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
-    - navigation.instant
+    - search.highlight
 
 nav:
   - Home: index.md
@@ -46,8 +48,10 @@ markdown_extensions:
   - toc:
       permalink: true
   - attr_list
+  - tables
+  - pymdownx.tabbed:
+      alternate_style: true
   - admonition
-  - pymdownx.tabbed
   - pymdownx.details
   - pymdownx.superfences
 
@@ -56,15 +60,22 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/spaceship-prompt/spaceship-prompt
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/SpaceshipZSH
+      link: https://twitter.com/SpaceshipPrompt
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/NTQWz8Dyt9
 
 extra_css:
   - assets/styles.css
 
 plugins:
-  - search
+  - search:
+      lang:
+        - en
+        - ru
+        - zh
   - i18n:
       default_language: en
       languages:
         en: English
         uk: Українська
+        zh: 简体中文
