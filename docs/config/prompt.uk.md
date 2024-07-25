@@ -38,47 +38,62 @@ is 📦 3.16.5
 
 ```zsh
 SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
-  package       # Package version
-  node          # Node.js section
-  bun           # Bun section
-  deno          # Deno section
-  ruby          # Ruby section
-  python        # Python section
-  elm           # Elm section
-  elixir        # Elixir section
-  xcode         # Xcode section
-  swift         # Swift section
-  golang        # Go section
-  php           # PHP section
-  rust          # Rust section
-  haskell       # Haskell Stack section
-  java          # Java section
-  lua           # Lua section
-  dart          # Dart section
-  julia         # Julia section
-  crystal       # Crystal section
-  docker        # Docker section
-  aws           # Amazon Web Services section
-  gcloud        # Google Cloud Platform section
-  venv          # virtualenv section
-  conda         # conda virtualenv section
-  dotnet        # .NET section
-  kubectl       # Kubectl context section
-  terraform     # Terraform workspace section
-  ibmcloud      # IBM Cloud section
-  exec_time     # Execution time
-  async         # Async jobs indicator
-  line_sep      # Line break
-  battery       # Battery level and status
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
+  time           # Time stamps section
+  user           # Username section
+  dir            # Current directory section
+  host           # Hostname section
+  git            # Git section (git_branch + git_status)
+  hg             # Mercurial section (hg_branch  + hg_status)
+  package        # Package version
+  node           # Node.js section
+  bun            # Bun section
+  deno           # Deno section
+  ruby           # Ruby section
+  python         # Python section
+  elm            # Elm section
+  elixir         # Elixir section
+  xcode          # Xcode section
+  swift          # Swift section
+  golang         # Go section
+  perl           # Perl section
+  php            # PHP section
+  rust           # Rust section
+  haskell        # Haskell Stack section
+  scala          # Scala section
+  kotlin         # Kotlin section
+  java           # Java section
+  lua            # Lua section
+  dart           # Dart section
+  julia          # Julia section
+  crystal        # Crystal section
+  docker         # Docker section
+  docker_compose # Docker section
+  aws            # Amazon Web Services section
+  gcloud         # Google Cloud Platform section
+  azure          # Azure section
+  venv           # virtualenv section
+  conda          # conda virtualenv section
+  dotnet         # .NET section
+  ocaml          # OCaml section
+  vlang          # V section
+  zig            # Zig section
+  purescript     # PureScript section
+  erlang         # Erlang section
+  kubectl        # Kubectl context section
+  ansible        # Ansible section
+  terraform      # Terraform workspace section
+  pulumi         # Pulumi stack section
+  ibmcloud       # IBM Cloud section
+  nix_shell      # Nix shell
+  gnu_screen     # GNU Screen section
+  exec_time      # Execution time
+  async          # Async jobs indicator
+  line_sep       # Line break
+  battery        # Battery level and status
+  jobs           # Background jobs indicator
+  exit_code      # Exit code section
+  sudo           # Sudo indicator
+  char           # Prompt character
 )
 ```
 
@@ -102,22 +117,23 @@ spaceship add git
 
 Крім використання вбудованих секцій, ви можете додавати сторонні секції або створити власні.
 
-[Подивитися вбудовані секції](/sections ""){.md-button} [Подивитися всі секції](/registry ""){.md-button}
+[Подивитися вбудовані секції](/sections/index.md ""){.md-button} [Подивитися всі секції](../registry.md ""){.md-button}
 
 ## Налаштування командного рядка
 
 Ця група налаштувань визначає поведінку командного рядка і стандартні параметри відображення секцій.
 
-| Змінна                               | За замовчуванням | Пояснення                                         |
-|:------------------------------------ |:----------------:| ------------------------------------------------- |
-| `SPACESHIP_PROMPT_ASYNC`             |      `true`      | Чи відображати командний рядок асинхронно         |
-| `SPACESHIP_PROMPT_ADD_NEWLINE`       |      `true`      | Додає символ нового рядка перед кожним запитом    |
-| `SPACESHIP_PROMPT_SEPARATE_LINE`     |      `true`      | Розтягнути командний рядок на два рядки           |
-| `SPACESHIP_PROMPT_FIRST_PREFIX_SHOW` |     `false`      | Показати префікс першої секції в командному рядку |
-| `SPACESHIP_PROMPT_PREFIXES_SHOW`     |      `true`      | Чи показувати префікси секцій                     |
-| `SPACESHIP_PROMPT_SUFFIXES_SHOW`     |      `true`      | Чи показувати суфікси секцій                      |
-| `SPACESHIP_PROMPT_DEFAULT_PREFIX`    |      `via·`      | Префікс за замовчуванням для секцій               |
-| `SPACESHIP_PROMPT_DEFAULT_SUFFIX`    |        ``        | Суфікс за замовчуванням для секцій                |
+| Змінна                                | За замовчуванням | Пояснення                                                  |
+|:------------------------------------- |:----------------:| ---------------------------------------------------------- |
+| `SPACESHIP_PROMPT_ASYNC`              |      `true`      | Чи відображати командний рядок асинхронно                  |
+| `SPACESHIP_PROMPT_ADD_NEWLINE`        |      `true`      | Додає символ нового рядка перед кожним запитом             |
+| `SPACESHIP_PROMPT_SEPARATE_LINE`      |      `true`      | Розтягнути командний рядок на два рядки                    |
+| `SPACESHIP_PROMPT_FIRST_PREFIX_SHOW`  |     `false`      | Показати префікс першої секції в командному рядку          |
+| `SPACESHIP_RPROMPT_FIRST_PREFIX_SHOW` |     `false`      | Показати префікс першої секції в командному рядку праворуч |
+| `SPACESHIP_PROMPT_PREFIXES_SHOW`      |      `true`      | Чи показувати префікси секцій                              |
+| `SPACESHIP_PROMPT_SUFFIXES_SHOW`      |      `true`      | Чи показувати суфікси секцій                               |
+| `SPACESHIP_PROMPT_DEFAULT_PREFIX`     |      `via·`      | Префікс за замовчуванням для секцій                        |
+| `SPACESHIP_PROMPT_DEFAULT_SUFFIX`     |        ``        | Суфікс за замовчуванням для секцій                         |
 
 Трохи більше про ці налаштування:
 
@@ -127,7 +143,7 @@ spaceship add git
 
 Синхронні секції показуються миттєво. Асинхронні секції обробляються у фоні та показуються коли інформація готова до відображення.
 
-[Cекція `async`](/sections/async) заміняє асинхронні секції, поки вони завантажуються.
+[Секція `async`](/sections/async.md) заміняє асинхронні секції, поки вони завантажуються.
 
 ### Відступи командного рядка
 

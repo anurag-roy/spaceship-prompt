@@ -38,47 +38,62 @@ The default prompt order is:
 
 ```zsh
 SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
-  package       # Package version
-  node          # Node.js section
-  bun           # Bun section
-  deno          # Deno section
-  ruby          # Ruby section
-  python        # Python section
-  elm           # Elm section
-  elixir        # Elixir section
-  xcode         # Xcode section
-  swift         # Swift section
-  golang        # Go section
-  php           # PHP section
-  rust          # Rust section
-  haskell       # Haskell Stack section
-  java          # Java section
-  lua           # Lua section
-  dart          # Dart section
-  julia         # Julia section
-  crystal       # Crystal section
-  docker        # Docker section
-  aws           # Amazon Web Services section
-  gcloud        # Google Cloud Platform section
-  venv          # virtualenv section
-  conda         # conda virtualenv section
-  dotnet        # .NET section
-  kubectl       # Kubectl context section
-  terraform     # Terraform workspace section
-  ibmcloud      # IBM Cloud section
-  exec_time     # Execution time
-  async         # Async jobs indicator
-  line_sep      # Line break
-  battery       # Battery level and status
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
+  time           # Time stamps section
+  user           # Username section
+  dir            # Current directory section
+  host           # Hostname section
+  git            # Git section (git_branch + git_status)
+  hg             # Mercurial section (hg_branch  + hg_status)
+  package        # Package version
+  node           # Node.js section
+  bun            # Bun section
+  deno           # Deno section
+  ruby           # Ruby section
+  python         # Python section
+  elm            # Elm section
+  elixir         # Elixir section
+  xcode          # Xcode section
+  swift          # Swift section
+  golang         # Go section
+  perl           # Perl section
+  php            # PHP section
+  rust           # Rust section
+  haskell        # Haskell Stack section
+  scala          # Scala section
+  kotlin         # Kotlin section
+  java           # Java section
+  lua            # Lua section
+  dart           # Dart section
+  julia          # Julia section
+  crystal        # Crystal section
+  docker         # Docker section
+  docker_compose # Docker section
+  aws            # Amazon Web Services section
+  gcloud         # Google Cloud Platform section
+  azure          # Azure section
+  venv           # virtualenv section
+  conda          # conda virtualenv section
+  dotnet         # .NET section
+  ocaml          # OCaml section
+  vlang          # V section
+  zig            # Zig section
+  purescript     # PureScript section
+  erlang         # Erlang section
+  kubectl        # Kubectl context section
+  ansible        # Ansible section
+  terraform      # Terraform workspace section
+  pulumi         # Pulumi stack section
+  ibmcloud       # IBM Cloud section
+  nix_shell      # Nix shell
+  gnu_screen     # GNU Screen section
+  exec_time      # Execution time
+  async          # Async jobs indicator
+  line_sep       # Line break
+  battery        # Battery level and status
+  jobs           # Background jobs indicator
+  exit_code      # Exit code section
+  sudo           # Sudo indicator
+  char           # Prompt character
 )
 ```
 
@@ -102,23 +117,24 @@ You can customize every section of the prompt with section's options. Check out 
 
 Besides built-in sections, you can add external section to your prompt or build a custom one.
 
-[Browse built-in sections](/sections){ .md-button }
-[Browse all sections](/registry){ .md-button }
+[Browse built-in sections](/sections/index.md){ .md-button }
+[Browse all sections](../registry.md){ .md-button }
 
 ## Prompt-level options
 
 This group of options defines a behavior of prompt and standard parameters for sections displaying.
 
-| Variable                             | Default | Meaning                                          |
-| :----------------------------------- | :-----: | ------------------------------------------------ |
-| `SPACESHIP_PROMPT_ASYNC`             | `true`  | Render prompt asynchronously or not              |
-| `SPACESHIP_PROMPT_ADD_NEWLINE`       | `true`  | Adds a newline character before each prompt line |
-| `SPACESHIP_PROMPT_SEPARATE_LINE`     | `true`  | Make the prompt span across two lines            |
-| `SPACESHIP_PROMPT_FIRST_PREFIX_SHOW` | `false` | Shows a prefix of the first section in prompt    |
-| `SPACESHIP_PROMPT_PREFIXES_SHOW`     | `true`  | Show prefixes before prompt sections or not      |
-| `SPACESHIP_PROMPT_SUFFIXES_SHOW`     | `true`  | Show suffixes before prompt sections or not      |
-| `SPACESHIP_PROMPT_DEFAULT_PREFIX`    | `via·`  | Default prefix for prompt sections               |
-| `SPACESHIP_PROMPT_DEFAULT_SUFFIX`    |   ` `   | Default suffix for prompt section                |
+| Variable                              | Default | Meaning                                             |
+| :------------------------------------ | :-----: | --------------------------------------------------- |
+| `SPACESHIP_PROMPT_ASYNC`              | `true`  | Render prompt asynchronously or not                 |
+| `SPACESHIP_PROMPT_ADD_NEWLINE`        | `true`  | Adds a newline character before each prompt line    |
+| `SPACESHIP_PROMPT_SEPARATE_LINE`      | `true`  | Make the prompt span across two lines               |
+| `SPACESHIP_PROMPT_FIRST_PREFIX_SHOW`  | `false` | Shows a prefix of the first section in prompt       |
+| `SPACESHIP_RPROMPT_FIRST_PREFIX_SHOW` | `false` | Shows a prefix of the first section in right prompt |
+| `SPACESHIP_PROMPT_PREFIXES_SHOW`      | `true`  | Show prefixes before prompt sections or not         |
+| `SPACESHIP_PROMPT_SUFFIXES_SHOW`      | `true`  | Show suffixes before prompt sections or not         |
+| `SPACESHIP_PROMPT_DEFAULT_PREFIX`     | `via·`  | Default prefix for prompt sections                  |
+| `SPACESHIP_PROMPT_DEFAULT_SUFFIX`     |   ` `   | Default suffix for prompt section                   |
 
 Here is a breakdown of these options:
 
@@ -128,11 +144,11 @@ The `SPACESHIP_PROMPT_ASYNC` option defines whether the prompt is rendered async
 
 The synchronous sections are displayed immediately. The asynchronous sections are processed in the background and are displayed when the information is ready to be displayed.
 
-The [`async` section](/sections/async) is used as a placeholder for not yet available asynchronous sections.
+The [`async` section](/sections/async.md) is used as a placeholder for not yet available asynchronous sections.
 
 ### Prompt spacing
 
-Spaceship adds and empty line between each prompt. You can disable this behavior by setting `SPACESHIP_PROMPT_ADD_NEWLINE` to `false`.
+Spaceship adds an empty line between each prompt. You can disable this behavior by setting `SPACESHIP_PROMPT_ADD_NEWLINE` to `false`.
 
 The prompt is also separated by a line break if `SPACESHIP_PROMPT_SEPARATE_LINE` is set to `true`.
 

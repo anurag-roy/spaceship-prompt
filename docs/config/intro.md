@@ -13,7 +13,8 @@ touch ~/.spaceshiprc.zsh
 … or, if you prefer to keep your configuration within a `~/.config` or `~/.config/spaceship` folders, you can do so, as well:
 
 ```zsh
-mkdir -p ~/.config/spaceship.zsh
+mkdir -p ~/.config
+touch ~/.config/spaceship.zsh
 ```
 
 This file will be automatically sourced by Spaceship when it starts up.
@@ -49,8 +50,8 @@ You can learn more about available options by reading further documentation.
 
 ## Changing the config location
 
-Optionally, you can change the location of the configuration file by setting the `SPACESHIP_CONFIG_FILE` environment variable.
+Optionally, you can change the location of the configuration file by setting the `SPACESHIP_CONFIG` environment variable.
 
 ```zsh
-export SPACESHIP_CONFIG_FILE="$HOME/.dotfiles/path/to/spaceship.zsh"
+export SPACESHIP_CONFIG="$HOME/.dotfiles/path/to/spaceship.zsh"
 ```

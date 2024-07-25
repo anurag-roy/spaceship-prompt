@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # ------------------------------------------------------------------------------
 # UTILS
 # Utils for common used actions
@@ -16,6 +18,16 @@ spaceship::exists() {
 #   spaceship::defined <function>
 spaceship::defined() {
   typeset -f + "$1" &> /dev/null
+}
+
+# Check if array includes and item
+# USAGE:
+#  spaceship::includes <array_name> <item>
+spaceship::includes() {
+  local array_name="$1" item="$2"
+  local array=("${(@P)array_name}")
+
+  (( $array[(Ie)$item] ))
 }
 
 # Precompile zsh file to ZWC (zsh word code)
@@ -65,7 +77,7 @@ spaceship::is_section_async() {
   )
 
   # Some sections must be always sync
-  if (( $sync_sections[(Ie)$section] )); then
+  if spaceship::includes sync_sections "$section"; then
     return 1
   fi
 
@@ -149,11 +161,13 @@ spaceship::upsearch() {
   while [ "$root" ]; do
     # For every file as an argument
     for file in "${files[@]}"; do
-      local filepath="$root/$file"
-      if [[ -e "$filepath" ]]; then
-        if [[ -z "$silent" ]]; then
-          echo "$filepath"
-        fi
+      local find_match="$(find $root -maxdepth 1 -name $file -print -quit 2>/dev/null)"
+      local filename="$root/$file"
+      if [[ -n "$find_match" ]]; then
+        [[ -z "$silent" ]] && echo "$find_match"
+        return 0
+      elif [[ -e "$filename" ]]; then
+        [[ -z "$silent" ]] && echo "$filename"
         return 0
       fi
     done
@@ -168,70 +182,6 @@ spaceship::upsearch() {
   done
 
   # If we reached the root, return non-zero
-  return 1
-}
-
-# Read data file with dot notation (JSON, YAML, TOML, XML)
-# USAGE:
-#   spaceship::datafile --<type> <file> [key]
-# EXAMPLE:
-#  $ spaceship::datafile --json package.json "author.name"
-#  > "John Doe"
-spaceship::datafile() {
-  # Parse CLI options
-  zparseopts -E -D \
-    -json=json \
-    -yaml=yaml \
-    -toml=toml \
-    -xml=xml
-
-  local file="$1" key="$2"
-
-  if [[ -n "$yaml" ]]; then
-    if spaceship::exists yq; then
-      yq -r ".$key" "$file"
-    elif spaceship::exists ruby; then
-      ruby -r yaml -e "puts '$key'.split('.').reduce(YAML::load_file('$file')) { |obj, key| obj[key] }" 2>/dev/null
-    elif spaceship::exists python3; then
-      python3 -c "import yaml, functools; print(functools.reduce(lambda obj, key: obj[key] if key else obj, '$key'.split('.'), yaml.safe_load(open('$file'))))" 2>/dev/null
-    else
-      return 1
-    fi
-  fi
-
-  if [[ -n "$json" ]]; then
-    if spaceship::exists jq; then
-      jq -r ".$key" "$file" 2>/dev/null
-    elif spaceship::exists yq; then
-      yq -r ".$key" "$file" 2>/dev/null
-    elif spaceship::exists ruby; then
-      ruby -r json -e "puts '$key'.split('.').reduce(JSON::load(File.read('$file'))){ |obj, key| obj[key] }" 2>/dev/null
-    elif spaceship::exists python3; then
-      python3 -c "import json, functools; print(functools.reduce(lambda obj, key: obj[key] if key else obj, '$key'.split('.'), json.load(open('$file'))))" 2>/dev/null
-    elif spaceship::exists node; then
-      node -p "require('./$file').$key" 2>/dev/null
-    else
-      return 1
-    fi
-  fi
-
-  if [[ -n "$toml" ]]; then
-    if spaceship::exists tomlq; then
-      tomlq -r ".$key" "$file"
-    else
-      return 1
-    fi
-  fi
-
-  if [[ -n "$xml" ]]; then
-    if spaceship::exists xq; then
-      xq -r ".$key" "$file"
-    else
-      return 1
-    fi
-  fi
-
-  # todo: grep by regexp?
   return 1
 }
 

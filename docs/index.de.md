@@ -1,98 +1,98 @@
 ---
 template: index.html
-title: Minimalistic, powerful and extremely customizable Zsh prompt
+title: Minimalistische, leistungsstarke und extrem anpassbare Zsh Prompt
 hide:
   - navigation
 hero:
-  title: Minimalistic, powerful and extremely customizable Zsh prompt
-  subtitle: It combines everything you may need for convenient work, without unnecessary complications, like a real spaceship.
-  install_button: Getting Started
-  source_button: Source Code
+  title: Minimalistische, leistungsstarke und extrem anpassbare Zsh Prompt
+  subtitle: Sie vereint alles, was du für bequeme Arbeit benötigst, ohne unnötige Komplikationen, wie ein echtes Raumschiff.
+  install_button: Erste Schritte
+  source_button: Quellcode
 features:
-  - 
-    title: Clean and simple
+  -
+    title: Ganz einfach
     image: /assets/images/what-is-needed.svg
-    description: The prompt is not overloaded, it shows only what you need at the moment (current directory, git branch, etc).
-  - 
-    title: Easy to set up
+    description: Die Eingabeaufforderung ist nicht überladen, sie zeigt nur, was du im Moment benötigst (aktuelles Verzeichnis, Git Branch, etc).
+  -
+    title: Leicht einzurichten
     image: /assets/images/out-of-the-box.svg
-    description: The prompt works right after installation without any additional configuration. install it and use it.
-  - 
-    title: Configurable
+    description: Die Eingabeaufforderung funktioniert direkt nach der Installation ohne zusätzliche Konfiguration. Installieren und verwenden.
+  -
+    title: Konfigurierbar
     image: /assets/images/configurable.svg
-    description: The prompt is zero-config, but if a customization is needed, it provides an easy-to-use interface for customization.
+    description: Die Eingabeaufforderung ist ohne Konfiguration nutzbar, bietet aber, sofern gewünscht, eine einfache Möglichkeit der Anpassung.
 companies:
-  title: Used daily by marvelous folks at
+  title: Täglich von wundervollen Leuten benutzt
   list:
-    - 
+    -
       name: Wix
       logo: https://cdn.svgporn.com/logos/wix.svg
-    - 
+    -
       name: Google
       logo: https://cdn.svgporn.com/logos/google.svg
-    - 
+    -
       name: Siemens
       logo: https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg
-    - 
+    -
       name: Microsoft
       logo: https://cdn.svgporn.com/logos/microsoft.svg
-    - 
+    -
       name: Adobe
       logo: https://upload.wikimedia.org/wikipedia/commons/6/6e/Adobe_Corporate_logo.svg
-    - 
+    -
       name: Docker
       logo: https://cdn.svgporn.com/logos/docker.svg
-    - 
+    -
       name: Shopify
       logo: https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg
-    - 
+    -
       name: GitHub
       logo: https://cdn.svgporn.com/logos/github.svg
-    - 
+    -
       name: Red Hat
       logo: https://cdn.svgporn.com/logos/redhat.svg
-    - 
+    -
       name: Amazon Web Services
       logo: https://cdn.svgporn.com/logos/aws.svg
-    - 
+    -
       name: Facebook
       logo: https://cdn.worldvectorlogo.com/logos/facebook-7.svg
-    - 
+    -
       name: npm
       logo: https://cdn.svgporn.com/logos/npm.svg
-    - 
+    -
       name: Unity Technologies
       logo: https://cdn.worldvectorlogo.com/logos/unity-technologies-logo.svg
-    - 
+    -
       name: Angular
       logo: https://cdn.svgporn.com/logos/angular.svg
-    - 
+    -
       name: Mozilla
       logo: https://cdn.svgporn.com/logos/mozilla.svg
-    - 
+    -
       name: Framer
       logo: https://cdn.svgporn.com/logos/framer.svg
-    - 
+    -
       name: Grammarly
       logo: https://cdn.svgporn.com/logos/grammarly.svg
-    - 
+    -
       name: Skyscanner
       logo: https://upload.wikimedia.org/wikipedia/commons/9/94/Skyscanner_Logo_LockupHorizontal_SkyBlue_RGB.svg
-    - 
+    -
       name: Node.js
       logo: https://cdn.svgporn.com/logos/nodejs.svg
-    - 
+    -
       name: Vue Storefront
       logo: https://cdn.worldvectorlogo.com/logos/vue-storefront.svg
-    - 
+    -
       name: Coinbase
       logo: https://cdn.worldvectorlogo.com/logos/coinbase-1.svg
-    - 
+    -
       name: Suse
       logo: https://cdn.svgporn.com/logos/suse.svg
 ---
 
-# Welcome aboard, Astronaut!
+# Willkommen an Bord, Astronaut!
 
 [![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua)
 
@@ -100,41 +100,41 @@ companies:
   <script id="asciicast-513451" src="https://asciinema.org/a/513451.js" data-autoplay="true" data-loop="true" data-preload="true" async></script>
   <noscript>
     <object class="asciicast" type="image/svg+xml" data="/assets/images/spaceship-demo.svg">
-      <img src="/assets/images/spaceship-demo.gif" alt="Spaceship demo" />
+      <img src="/assets/images/spaceship-demo.gif" alt="Spaceship Demo" />
     </object>
   </noscript>
 </div>
 
-## Features
+## Funktionen
 
-**Spaceship** is a superpowered Zsh prompt. Prompt is what you see when you type a command. It can show a lot of useful tips, saving your time and making user experience smooth and pleasant.
+**Spaceship** ist eine Zsh-Prompt mit Superkräften. Die Prompt ist das, was du siehst, wenn du einen Befehl eingibst. Es zeigt viele nützliche Tipps, spart Zeit und macht das Benutzererlebnis reibungslos und angenehm.
 
-Here are some sneak picks of what **Spaceship** can show:
+Hier sind ein paar Tipps, was **Spaceship** anzeigen kann:
 
-- Clever hostname and username displaying
-- Repository statuses (Git and Mercurial are supported)
-- Runtime environments for various languages (Node.js, Rust, Python, Ruby, Swift, Go, PHP and many others)
-- Docker version, Kubernetes context and connected machine
-- Package version (npm, lerna, cargo, composer and others)
-- Battery level and status
-- Indicator for jobs in the background `✦`
-- A lot of [useful information](/sections)
-- Custom [information of your choice](/advanced/creating-section)
+- Intelligente Anzeige des Hostnamen und Benutzernamen
+- Repository Status (Git und Mercurial werden unterstützt)
+- Details zu Laufzeitumgebungen verschiedener Sprachen (Node.js, Rust, Python, Ruby, Swift, Go, PHP und viele weitere)
+- Docker Version, Kubernetes Kontext und verbundene Maschinen
+- Paketversion (npm, lerna, cargo, composer und andere)
+- Batterieladestand und -status
+- Anzeige für Hintergrundsprozesse `✦`
+- Eine Menge [nützliche Informationen](/sections/index.md)
+- Benutzerdefinierte [Informationen Ihrer Wahl](/advanced/creating-section)
 
-Want more features? Please, [open an issue](https://github.com/spaceship-prompt/yspaceship-prompt/issues/new/choose) or send pull request.
+Du brauchst noch mehr Funktionen? Bitte [öffne ein Ticket](https://github.com/spaceship-prompt/yspaceship-prompt/issues/new/choose) oder sende Pull Request.
 
-## Getting Started
+## Erste Schritte
 
-Installing Spaceship is simple and quick. It's configurable and easy to use.
+Die Installation von Spaceship ist einfach und schnell. Es ist konfigurierbar und einfach zu bedienen.
 
-[Installation](/getting-started ""){.md-button} [Configuration](/config/intro ""){.md-button}
+[Installation](/getting-started ""){.md-button} [Konfiguration](/config/intro ""){.md-button}
 
 ## Support
 
-Join our community and consider contributing to the project.
+Trete unserer Community bei und erwäge einen Beitrag zum Projekt.
 
-[:material-hand-heart: Contribute](/contribute ""){.md-button} [:fontawesome-brands-twitter: Twitter](https//twitter.com/SpaceshipPrompt ""){.md-button} [:fontawesome-brands-discord: Discord](https://discord.gg/NTQWz8Dyt9 ""){.md-button} [:fontawesome-brands-github: Discussions](https://github.com/spaceship-prompt/spaceship-prompt/discussions/ ""){.md-button}
+[:material-hand-heart: Contribute](/contribute ""){.md-button} [:fontawesome-brands-twitter: Twitter](https//twitter.com/SpaceshipPrompt ""){.md-button} [:fontawesome-brands-discord: Discord](https://discord.gg/NTQWz8Dyt9 ""){.md-button} [:fontawesome-brands-github: Diskussionen](https://github.com/spaceship-prompt/spaceship-prompt/discussions/ ""){.md-button}
 
-## License
+## Lizenz
 
 MIT © [Denys Dovhan](http://denysdovhan.com)

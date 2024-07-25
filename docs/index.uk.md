@@ -118,7 +118,7 @@ companies:
 - Версія пакунку (npm, lerna, cargo, редактор та інші)
 - Поточний рівень заряду батареї та її статус
 - Індикатор для задач, що виконуються у фоновому режимі `✦`
-- Багато [корисної інформації](/sections)
+- Багато [корисної інформації](/sections/index.md)
 - Додатково [інформація на ваш вибір](/advanced/creating-section)
 
 Бажаєте більше можливостей? Будь ласка, [відкрийте задачу](https://github.com/spaceship-prompt/yspaceship-prompt/issues/new/choose) або надішліть пул-реквест.
@@ -127,13 +127,13 @@ companies:
 
 Встановлення Spaceship просте та швидке. Він легко конфігурується і є простим у використанні.
 
-[Встановлення](/getting-started ""){.md-button.md-button--primary} [Конфігурація](/config/intro ""){.md-button}
+[Встановлення](/getting-started ""){.md-button} [Конфігурація](/config/intro ""){.md-button}
 
 ## Підтримка
 
 Приєднайтеся до нашої спільноти або спробуйте зробити свій внесок у проєкт.
 
-[:material-hand-heart: Зробити внесок](/contribute ""){.md-button} [:fontawesome-brands-twitter: Twitter](https//twitter.com/SpaceshipPrompt ""){.md-button} [:fontawesome-brands-discord: Discord](https://discord.gg/NTQWz8Dyt9 ""){.md-button} [:fontawesome-brands-github: Discussions](https://github.com/spaceship-prompt/spaceship-prompt/discussions/ ""){.md-button}
+[:material-hand-heart: Долучитись](/contribute ""){.md-button} [:fontawesome-brands-twitter: Twitter](https://twitter.com/SpaceshipPrompt ""){.md-button} [:fontawesome-brands-discord: Discord](https://discord.gg/NTQWz8Dyt9 ""){.md-button} [:fontawesome-brands-github: Discussions](https://github.com/spaceship-prompt/spaceship-prompt/discussions/ ""){.md-button}
 
 ## Ліцензія
 

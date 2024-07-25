@@ -1,28 +1,28 @@
 ---
 template: index.html
-title: Minimalistic, powerful and extremely customizable Zsh prompt
+title: Invite de commande Zsh minimaliste, puissante et extrêmement personnalisable
 hide:
   - navigation
 hero:
-  title: Minimalistic, powerful and extremely customizable Zsh prompt
-  subtitle: It combines everything you may need for convenient work, without unnecessary complications, like a real spaceship.
-  install_button: Getting Started
-  source_button: Source Code
+  title: Invite de commande Zsh minimaliste, puissante et extrêmement personnalisable
+  subtitle: Combinant tout ce dont vous pourriez avoir besoin pour un travail pratique, sans complications inutiles, comme un véritable vaisseau spatial.
+  install_button: Pour commencer
+  source_button: Code source
 features:
   - 
-    title: Clean and simple
+    title: Propre et simple
     image: /assets/images/what-is-needed.svg
-    description: The prompt is not overloaded, it shows only what you need at the moment (current directory, git branch, etc).
+    description: L'invite de commande n'est pas surchargée, elle ne montre que ce dont vous avez besoin dans l'instant (répertoire courant, branche git, etc.).
   - 
-    title: Easy to set up
+    title: Facile à configurer
     image: /assets/images/out-of-the-box.svg
-    description: The prompt works right after installation without any additional configuration. install it and use it.
+    description: L'invite de commande fonctionne dès l'installation sans aucune configuration supplémentaire. Installez-le, utilisez-le.
   - 
     title: Configurable
     image: /assets/images/configurable.svg
-    description: The prompt is zero-config, but if a customization is needed, it provides an easy-to-use interface for customization.
+    description: L'invite de commande est zéro configuration, mais si une personnalisation est nécessaire, elle fournit une interface facile à utiliser.
 companies:
-  title: Used daily by marvelous folks at
+  title: Utilisé quotidiennement par les gens merveilleux de
   list:
     - 
       name: Wix
@@ -92,7 +92,7 @@ companies:
       logo: https://cdn.svgporn.com/logos/suse.svg
 ---
 
-# Welcome aboard, Astronaut!
+# Bienvenue à bord, Astronaute !
 
 [![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua)
 
@@ -100,41 +100,41 @@ companies:
   <script id="asciicast-513451" src="https://asciinema.org/a/513451.js" data-autoplay="true" data-loop="true" data-preload="true" async></script>
   <noscript>
     <object class="asciicast" type="image/svg+xml" data="/assets/images/spaceship-demo.svg">
-      <img src="/assets/images/spaceship-demo.gif" alt="Spaceship demo" />
+      <img src="/assets/images/spaceship-demo.gif" alt="Demo Spaceship" />
     </object>
   </noscript>
 </div>
 
-## Features
+## Fonctionnalités
 
-**Spaceship** is a superpowered Zsh prompt. Prompt is what you see when you type a command. It can show a lot of useful tips, saving your time and making user experience smooth and pleasant.
+**Spaceship** est une invite de commande Zsh superpuissante. Une invite de commande est ce que vous voyez lorsque vous entrez une commande. Cela peut afficher beaucoup d'astuces, vous faire gagner du temps et rendre l'expérience utilisateur agréable.
 
-Here are some sneak picks of what **Spaceship** can show:
+Voici quelques avant-goûts de ce que peut afficher **Spaceship**:
 
-- Clever hostname and username displaying
-- Repository statuses (Git and Mercurial are supported)
-- Runtime environments for various languages (Node.js, Rust, Python, Ruby, Swift, Go, PHP and many others)
-- Docker version, Kubernetes context and connected machine
-- Package version (npm, lerna, cargo, composer and others)
-- Battery level and status
-- Indicator for jobs in the background `✦`
-- A lot of [useful information](/sections)
-- Custom [information of your choice](/advanced/creating-section)
+- Affichage du nom de l'hôte et de l'utilisateur
+- Statuts du dépôt (Git et Mercurial sont supportés)
+- Environnements d'exécution pour différents langages (Node.js, Rust, Python, Ruby, Swift, Go, PHP et bien d'autres)
+- Version Docker, contexte Kubernetes et machine connectée
+- Version du paquet (npm, lerna, cargo, composer et autres)
+- Niveau et état de la batterie
+- Indicateur pour les tâches en arrière-plan `✦`
+- Beaucoup [d'informations utiles](/sections/index.md)
+- [Informations personnalisées](/advanced/creating-section) de votre choix
 
-Want more features? Please, [open an issue](https://github.com/spaceship-prompt/yspaceship-prompt/issues/new/choose) or send pull request.
+Vous souhaitez plus de fonctionnalités ? [Ouvrez un ticket](https://github.com/spaceship-prompt/yspaceship-prompt/issues/new/choose) ou envoyez une pull request.
 
-## Getting Started
+## Pour commencer
 
-Installing Spaceship is simple and quick. It's configurable and easy to use.
+L'installation de Spaceship est simple et rapide. Spaceship est configurable et facile à utiliser.
 
 [Installation](/getting-started ""){.md-button} [Configuration](/config/intro ""){.md-button}
 
 ## Support
 
-Join our community and consider contributing to the project.
+Rejoignez notre communauté et envisagez de contribuer au projet.
 
-[:material-hand-heart: Contribute](/contribute ""){.md-button} [:fontawesome-brands-twitter: Twitter](https//twitter.com/SpaceshipPrompt ""){.md-button} [:fontawesome-brands-discord: Discord](https://discord.gg/NTQWz8Dyt9 ""){.md-button} [:fontawesome-brands-github: Discussions](https://github.com/spaceship-prompt/spaceship-prompt/discussions/ ""){.md-button}
+[:material-hand-heart: Contribuer](/contribute ""){.md-button} [:fontawesome-brands-twitter: Twitter](https://twitter.com/SpaceshipPrompt ""){.md-button} [:fontawesome-brands-discord: Discord](https://discord.gg/NTQWz8Dyt9 ""){.md-button} [:fontawesome-brands-github: Discussions](https://github.com/spaceship-prompt/spaceship-prompt/discussions/ ""){.md-button}
 
-## License
+## Licence
 
 MIT © [Denys Dovhan](http://denysdovhan.com)
